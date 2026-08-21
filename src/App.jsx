@@ -9,8 +9,9 @@ function App() {
   // GitHub Pages base path
   const baseUrl = import.meta.env.BASE_URL;
 
+  // Files are inside public/
   const profileImage = `${baseUrl}profile.jpg`;
-  const resumeFile = `${baseUrl}shivam resume11.pdf`;
+  const resumeFile = `${baseUrl}shivam%20resume11.pdf`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,12 +73,12 @@ function App() {
 
   return (
     <div className={darkMode ? "app dark" : "app"}>
-      {/* Background */}
+      {/* BACKGROUND */}
       <div className="background-grid"></div>
       <div className="background-glow glow-one"></div>
       <div className="background-glow glow-two"></div>
 
-      {/* Navbar */}
+      {/* NAVBAR */}
       <nav className="navbar">
         <a href="#home" className="logo" onClick={closeMenu}>
           Shivam Yadav<span>.</span>
@@ -111,6 +112,7 @@ function App() {
 
         <div className="nav-actions">
           <button
+            type="button"
             className="theme-btn"
             onClick={() => setDarkMode((prev) => !prev)}
             aria-label="Toggle theme"
@@ -119,6 +121,7 @@ function App() {
           </button>
 
           <button
+            type="button"
             className="menu-btn"
             onClick={() => setMenuOpen((prev) => !prev)}
             aria-label="Toggle menu"
@@ -128,7 +131,7 @@ function App() {
         </div>
       </nav>
 
-      {/* Main */}
+      {/* MAIN */}
       <main>
         {/* HERO */}
         <section id="home" className="hero">
