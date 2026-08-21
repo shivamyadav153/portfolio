@@ -6,6 +6,12 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showTop, setShowTop] = useState(false);
 
+  // GitHub Pages base path
+  const baseUrl = import.meta.env.BASE_URL;
+
+  const profileImage = `${baseUrl}profile.jpg`;
+  const resumeFile = `${baseUrl}shivam resume11.pdf`;
+
   useEffect(() => {
     const handleScroll = () => {
       setShowTop(window.scrollY > 500);
@@ -66,12 +72,12 @@ function App() {
 
   return (
     <div className={darkMode ? "app dark" : "app"}>
-      {/* BACKGROUND */}
+      {/* Background */}
       <div className="background-grid"></div>
       <div className="background-glow glow-one"></div>
       <div className="background-glow glow-two"></div>
 
-      {/* NAVBAR */}
+      {/* Navbar */}
       <nav className="navbar">
         <a href="#home" className="logo" onClick={closeMenu}>
           Shivam Yadav<span>.</span>
@@ -122,7 +128,7 @@ function App() {
         </div>
       </nav>
 
-      {/* MAIN */}
+      {/* Main */}
       <main>
         {/* HERO */}
         <section id="home" className="hero">
@@ -157,11 +163,7 @@ function App() {
                 View My Work <span>↓</span>
               </a>
 
-              <a
-                href={`${import.meta.env.BASE_URL}shivam resume11.pdf`}
-                download
-                className="outline-btn"
-              >
+              <a href={resumeFile} download className="outline-btn">
                 ↓ Download Resume
               </a>
             </div>
@@ -202,7 +204,7 @@ function App() {
 
               <div className="profile-image-container">
                 <img
-                  src={`${import.meta.env.BASE_URL}profile.jpg`}
+                  src={profileImage}
                   alt="Shivam Yadav"
                   className="profile-image"
                 />
