@@ -210,6 +210,9 @@ function App() {
                   src={profileImage}
                   alt="Shivam Yadav"
                   className="profile-image"
+                  onError={(e) => {
+                    console.error("Profile image failed:", e.currentTarget.src);
+                  }}
                 />
               </div>
             </div>
@@ -346,6 +349,7 @@ function App() {
                   <div className="skill-info">
                     <div className="skill-name">
                       <span className="skill-symbol">{skill[2]}</span>
+
                       {skill[0]}
                     </div>
 
