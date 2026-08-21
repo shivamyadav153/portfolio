@@ -6,12 +6,9 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showTop, setShowTop] = useState(false);
 
-  // GitHub Pages base path
-  const baseUrl = import.meta.env.BASE_URL;
-
-  // Files are inside public/
-  const profileImage = `${baseUrl}profile.jpg`;
-  const resumeFile = `${baseUrl}shivam%20resume11.pdf`;
+  // GitHub Pages
+  const profileImage = "/portfolio/profile.jpg";
+  const resumeFile = "/portfolio/shivam%20resume11.pdf";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -211,7 +208,10 @@ function App() {
                   alt="Shivam Yadav"
                   className="profile-image"
                   onError={(e) => {
-                    console.error("Profile image failed:", e.currentTarget.src);
+                    console.error(
+                      "Profile image not found:",
+                      e.currentTarget.src,
+                    );
                   }}
                 />
               </div>
@@ -349,7 +349,6 @@ function App() {
                   <div className="skill-info">
                     <div className="skill-name">
                       <span className="skill-symbol">{skill[2]}</span>
-
                       {skill[0]}
                     </div>
 
