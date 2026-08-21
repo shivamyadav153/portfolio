@@ -158,7 +158,7 @@ function App() {
               </a>
 
               <a
-                href="/portfolio/shivam%20resume11.pdf"
+                href={`${import.meta.env.BASE_URL}shivam resume11.pdf`}
                 download
                 className="outline-btn"
               >
@@ -202,7 +202,7 @@ function App() {
 
               <div className="profile-image-container">
                 <img
-                  src="/portfolio/profile.jpg"
+                  src={`${import.meta.env.BASE_URL}profile.jpg`}
                   alt="Shivam Yadav"
                   className="profile-image"
                 />
