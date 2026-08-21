@@ -13,7 +13,9 @@ function App() {
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const projects = [
@@ -58,16 +60,18 @@ function App() {
     ["DSA", "80%", "⌘"],
   ];
 
-  const closeMenu = () => setMenuOpen(false);
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
 
   return (
     <div className={darkMode ? "app dark" : "app"}>
-      {/* Background */}
+      {/* BACKGROUND */}
       <div className="background-grid"></div>
       <div className="background-glow glow-one"></div>
       <div className="background-glow glow-two"></div>
 
-      {/* Navbar */}
+      {/* NAVBAR */}
       <nav className="navbar">
         <a href="#home" className="logo" onClick={closeMenu}>
           Shivam Yadav<span>.</span>
@@ -77,18 +81,23 @@ function App() {
           <a href="#home" onClick={closeMenu}>
             Home
           </a>
+
           <a href="#about" onClick={closeMenu}>
             About
           </a>
+
           <a href="#skills" onClick={closeMenu}>
             Skills
           </a>
+
           <a href="#projects" onClick={closeMenu}>
             Projects
           </a>
+
           <a href="#experience" onClick={closeMenu}>
             Experience
           </a>
+
           <a href="#contact" onClick={closeMenu}>
             Contact
           </a>
@@ -97,7 +106,7 @@ function App() {
         <div className="nav-actions">
           <button
             className="theme-btn"
-            onClick={() => setDarkMode(!darkMode)}
+            onClick={() => setDarkMode((prev) => !prev)}
             aria-label="Toggle theme"
           >
             {darkMode ? "☀" : "☾"}
@@ -105,7 +114,7 @@ function App() {
 
           <button
             className="menu-btn"
-            onClick={() => setMenuOpen(!menuOpen)}
+            onClick={() => setMenuOpen((prev) => !prev)}
             aria-label="Toggle menu"
           >
             {menuOpen ? "✕" : "☰"}
@@ -113,8 +122,9 @@ function App() {
         </div>
       </nav>
 
-      {/* HERO */}
+      {/* MAIN */}
       <main>
+        {/* HERO */}
         <section id="home" className="hero">
           <div className="hero-left">
             <div className="status-badge">
@@ -147,7 +157,11 @@ function App() {
                 View My Work <span>↓</span>
               </a>
 
-              <a href="/shivam%20resume11.pdf" download className="outline-btn">
+              <a
+                href="/portfolio/shivam%20resume11.pdf"
+                download
+                className="outline-btn"
+              >
                 ↓ Download Resume
               </a>
             </div>
@@ -188,7 +202,7 @@ function App() {
 
               <div className="profile-image-container">
                 <img
-                  src="/profile.jpg"
+                  src="/portfolio/profile.jpg"
                   alt="Shivam Yadav"
                   className="profile-image"
                 />
@@ -586,6 +600,7 @@ function App() {
         </div>
       </footer>
 
+      {/* BACK TO TOP */}
       {showTop && (
         <a href="#home" className="back-top">
           ↑
