@@ -6,9 +6,9 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showTop, setShowTop] = useState(false);
 
-  // GitHub Pages
-  const profileImage = "/portfolio/profile.jpg";
-  const resumeFile = "/portfolio/shivam%20resume11.pdf";
+  // GitHub Pages compatible paths
+  const profileImage = `${import.meta.env.BASE_URL}profile.jpg`;
+  const resumeFile = `${import.meta.env.BASE_URL}shivam%20resume11.pdf`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -128,7 +128,6 @@ function App() {
         </div>
       </nav>
 
-      {/* MAIN */}
       <main>
         {/* HERO */}
         <section id="home" className="hero">
@@ -207,12 +206,6 @@ function App() {
                   src={profileImage}
                   alt="Shivam Yadav"
                   className="profile-image"
-                  onError={(e) => {
-                    console.error(
-                      "Profile image not found:",
-                      e.currentTarget.src,
-                    );
-                  }}
                 />
               </div>
             </div>
