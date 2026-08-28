@@ -8,7 +8,7 @@ function App() {
 
   // GitHub Pages compatible paths
   const profileImage = `${import.meta.env.BASE_URL}profile.jpg`;
-  const resumeFile = `${import.meta.env.BASE_URL}shivam%20resume11.pdf`;
+  const resumeFile = `${import.meta.env.BASE_URL}ShivamResume.pdf`;
 
   useEffect(() => {
     const handleScroll = () => {
